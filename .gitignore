@@ -4,9 +4,9 @@
 # directories
 build/
 .vscode/
-html/
+html/d
 latex/
-external/json/
+external/log/
 
 ################################
 ############ C/C++ #############
