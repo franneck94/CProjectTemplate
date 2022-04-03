@@ -1,10 +1,10 @@
-#include <iostream>
+#include <stdio.h>
 
 #include "my_lib.h"
 
 int print_hello_world()
 {
-    std::cout << "Cout: Hello World" << '\n';
+    printf("Cout: Hello World\n");
 
     return 1;
 }

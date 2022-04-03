@@ -1,13 +1,13 @@
 if (ENABLE_TESTING)
     set(TEST_MAIN    "unit_tests")
-    set(TEST_SOURCES "main.cc")
+    set(TEST_SOURCES "main.c")
 
     add_executable(${TEST_MAIN} ${TEST_SOURCES})
 
     target_link_libraries(${TEST_MAIN} PUBLIC
         ${LIBRARY_NAME})
     target_link_libraries(${TEST_MAIN} PRIVATE
-        ${CONAN_CATCH2}
+        unity
     )
     target_set_warnings(TARGET ${TEST_MAIN} ENABLE ON AS_ERROR OFF)
 
@@ -19,8 +19,7 @@ if (ENABLE_TESTING)
             "${PROJECT_SOURCE_DIR}/docs/*"
             "${PROJECT_SOURCE_DIR}/external/*"
             "${PROJECT_SOURCE_DIR}/tests/*"
-            "${CONAN_CATCH2_ROOT}/*"
-            "${CONAN_CXXOPTS_ROOT}/*"
+            "${CONAN_JANSSON_ROOT}/*"
             "/usr/include/*")
         setup_target_for_coverage_lcov(
             NAME ${COVERAGE_MAIN}

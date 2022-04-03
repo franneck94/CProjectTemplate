@@ -13,8 +13,6 @@ This is a template for C projects. What you get:
 - External libraries installed and managed by [Conan](https://conan.io/).
 - Unit testing using [Unity](https://github.com/ThrowTheSwitch/Unity)
 - General purpose libraries:
-  - [DataStructures](https://github.com/recp/ds)
-  - [JSON](https://github.com/akheron/jansson)
   - [log](https://github.com/rxi/log.c)
   - [argparse](https://github.com/cofyc/argparse)
 - Continuous integration testing with Github Actions.

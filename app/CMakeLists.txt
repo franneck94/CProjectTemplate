@@ -1,13 +1,11 @@
-set (APP_SOURCES "main.cc")
+set (APP_SOURCES "main.c")
 
 add_executable(${EXECUTABLE_NAME} ${APP_SOURCES})
 
 target_link_libraries(${EXECUTABLE_NAME} PUBLIC
     ${LIBRARY_NAME}
-    fmt::fmt
-    spdlog::spdlog_header_only
-    nlohmann_json
-    ${CONAN_CXXOPTS}
+    log
+    argparse
 )
 
 if (${ENABLE_WARNINGS})

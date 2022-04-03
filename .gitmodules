@@ -1,0 +1,3 @@
+[submodule "external/log"]
+	path = external/log
+	url = https://github.com/rxi/log.c
