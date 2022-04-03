@@ -36,7 +36,7 @@ if (ENABLE_COVERAGE)
 endif()
 
 if (ENABLE_LTO)
-    find_lto(CXX)
+    find_lto(C)
 endif()
 
 ### EXTERNAL LIBRARIES

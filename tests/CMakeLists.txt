@@ -19,7 +19,6 @@ if (ENABLE_TESTING)
             "${PROJECT_SOURCE_DIR}/docs/*"
             "${PROJECT_SOURCE_DIR}/external/*"
             "${PROJECT_SOURCE_DIR}/tests/*"
-            "${CONAN_JANSSON_ROOT}/*"
             "/usr/include/*")
         setup_target_for_coverage_lcov(
             NAME ${COVERAGE_MAIN}

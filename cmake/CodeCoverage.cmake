@@ -126,11 +126,11 @@ if (ENABLE_COVERAGE)
         message(FATAL_ERROR "gcov not found! Aborting...")
     endif() # NOT GCOV_PATH
 
-    if("${CMAKE_CXX_COMPILER_ID}" MATCHES "(Apple)?[Cc]lang")
-        if("${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 3)
+    if("${CMAKE_C_COMPILER_ID}" MATCHES "(Apple)?[Cc]lang")
+        if("${CMAKE_C_COMPILER_VERSION}" VERSION_LESS 3)
             message(FATAL_ERROR "Clang version must be 3.0.0 or greater! Aborting...")
         endif()
-    elseif(NOT CMAKE_COMPILER_IS_GNUCXX)
+    elseif(NOT CMAKE_C_COMPILER_ID STREQUAL "GNU")
         if("${CMAKE_Fortran_COMPILER_ID}" MATCHES "[Ff]lang")
             # Do nothing; exit conditional without error if true
         elseif("${CMAKE_Fortran_COMPILER_ID}" MATCHES "GNU")
@@ -147,7 +147,7 @@ if (ENABLE_COVERAGE)
         ${COVERAGE_COMPILER_FLAGS}
         CACHE STRING "Flags used by the Fortran compiler during coverage builds."
         FORCE )
-    set(CMAKE_CXX_FLAGS_COVERAGE
+    set(CMAKE_C_FLAGS_COVERAGE
         ${COVERAGE_COMPILER_FLAGS}
         CACHE STRING "Flags used by the C++ compiler during coverage builds."
         FORCE )
@@ -165,7 +165,7 @@ if (ENABLE_COVERAGE)
         FORCE )
     mark_as_advanced(
         CMAKE_Fortran_FLAGS_COVERAGE
-        CMAKE_CXX_FLAGS_COVERAGE
+        CMAKE_C_FLAGS_COVERAGE
         CMAKE_C_FLAGS_COVERAGE
         CMAKE_EXE_LINKER_FLAGS_COVERAGE
         CMAKE_SHARED_LINKER_FLAGS_COVERAGE )
@@ -432,7 +432,7 @@ endfunction() # setup_target_for_coverage_gcovr_html
 
 function(append_coverage_compiler_flags)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COVERAGE_COMPILER_FLAGS}" PARENT_SCOPE)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COVERAGE_COMPILER_FLAGS}" PARENT_SCOPE)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COVERAGE_COMPILER_FLAGS}" PARENT_SCOPE)
     set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} ${COVERAGE_COMPILER_FLAGS}" PARENT_SCOPE)
     message(STATUS "Appending code coverage compiler flags: ${COVERAGE_COMPILER_FLAGS}")
 endfunction() # append_coverage_compiler_flags
