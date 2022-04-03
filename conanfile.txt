@@ -1,0 +1,5 @@
+[requires]
+jansson/2.14
+
+[generators]
+cmake
