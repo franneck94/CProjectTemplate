@@ -1,6 +1,8 @@
 if (ENABLE_TESTING)
-    set(TEST_MAIN    "unit_tests")
-    set(TEST_SOURCES "main.c")
+    set(TEST_MAIN
+        "unit_tests")
+    set(TEST_SOURCES
+        "main.c")
 
     add_executable(${TEST_MAIN} ${TEST_SOURCES})
 
@@ -9,7 +11,9 @@ if (ENABLE_TESTING)
     target_link_libraries(${TEST_MAIN} PRIVATE
         unity
     )
-    target_set_warnings(TARGET ${TEST_MAIN} ENABLE ON AS_ERROR OFF)
+    if (${ENABLE_WARNINGS})
+        target_set_warnings(TARGET ${TEST_MAIN} ENABLE ON AS_ERROR OFF)
+    endif()
 
     if (ENABLE_COVERAGE)
         set(COVERAGE_MAIN "coverage")

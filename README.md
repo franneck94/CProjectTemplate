@@ -10,7 +10,6 @@ This is a template for C projects. What you get:
 - Library, executable and test code separated in distinct folders.
 - Use of modern CMake for building and compiling.
 - External libraries fetched by CMake or cloned by Git.
-- External libraries installed and managed by [Conan](https://conan.io/).
 - Unit testing using [Unity](https://github.com/ThrowTheSwitch/Unity)
 - General purpose libraries:
   - [log](https://github.com/rxi/log.c)

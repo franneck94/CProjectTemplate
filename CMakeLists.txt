@@ -57,9 +57,6 @@ FetchContent_Declare(
     GIT_SHALLOW TRUE)
 FetchContent_MakeAvailable(argparse)
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
-
 ### SUB DIRECTORIES
 
 add_subdirectory(configured)
