@@ -50,7 +50,7 @@ Library code goes into [src/](src/), main program code in [app/](app) and tests 
 - GNU Makefile
 - Doxygen
 - Conan or VCPKG
-- MSVC 2017 (or higher), G9 (or higher), Clang9 (or higher)
+- MSVC 2017 (or higher), GCC 9 (or higher), Clang 9 (or higher)
 - Code Coverage (only on GNU|Clang): lcov, gcovr
 
 ## Building
@@ -62,8 +62,7 @@ git clone --recursive https://github.com/franneck94/CProjectTemplate
 make prepare
 ```
 
-- App Executable:
-The build type can be Debug/Release/MinSizeRel or RelWithDebInfo
+- App Executable
 
 ```shell
 cd build
@@ -73,8 +72,7 @@ cd bin
 ./main
 ```
 
-- Unit testing:
-The build type should be Debug for GCC/Clang and Release for MSVC (due to bug).
+- Unit testing
 
 ```shell
 cd build
@@ -92,13 +90,12 @@ cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build . --config Debug --target docs
 ```
 
-- Code Coverage (Unix only):
-The build type has to be Coverage.
+- Code Coverage (Unix only)
 
 ```shell
 cd build
-cmake -DCMAKE_BUILD_TYPE=Coverage -DENABLE_CODE_COVERAGE=ON ..
-cmake --build . --config Coverage --target coverage
+cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_CODE_COVERAGE=ON ..
+cmake --build . --config Debug --target coverage
 ```
 
 For more info about CMake see [here](./CMakeGuide.md).
