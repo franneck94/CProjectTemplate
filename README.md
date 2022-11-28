@@ -49,7 +49,6 @@ Library code goes into [src/](src/), main program code in [app/](app) and tests 
 - CMake 3.16+
 - GNU Makefile
 - Doxygen
-- Conan or VCPKG
 - MSVC 2017 (or higher), GCC 9 (or higher), Clang 9 (or higher)
 - Code Coverage (only on GNU|Clang): lcov, gcovr
 
@@ -94,7 +93,7 @@ cmake --build . --config Debug --target docs
 
 ```shell
 cd build
-cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_CODE_COVERAGE=ON ..
+cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_COVERAGE=ON ..
 cmake --build . --config Debug --target coverage
 ```
 
