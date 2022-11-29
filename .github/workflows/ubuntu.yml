@@ -18,9 +18,6 @@ jobs:
     - name: install
       run: |
         make install
-    - name: setup
-      run: |
-        make setup
     - name: prepare
       run: |
         make prepare

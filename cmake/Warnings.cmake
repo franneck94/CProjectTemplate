@@ -5,7 +5,12 @@ function(target_set_warnings)
     endif()
 
     set(oneValueArgs TARGET ENABLE AS_ERROR)
-    cmake_parse_arguments(target_set_warnings "" "${oneValueArgs}" "" ${ARGN} )
+    cmake_parse_arguments(
+        target_set_warnings
+        ""
+        "${oneValueArgs}"
+        ""
+        ${ARGN})
 
     if(NOT ${target_set_warnings_ENABLE})
         return()
@@ -13,32 +18,37 @@ function(target_set_warnings)
 
     set(MSVC_WARNINGS
         /W4 # Baseline reasonable warnings
-        /w14242 # 'identifier': conversion from 'type1' to 'type1', possible loss of data
+        /w14242 # 'identifier': conversion from 'type1' to 'type1', possible
+                # loss of data
         /w14287 # 'operator': unsigned/negative constant mismatch
         /w14296 # 'operator': expression is always 'boolean_value'
         /w14311 # 'variable': pointer truncation from 'type1' to 'type2'
-        /w14826 # Conversion from 'type1' to 'type_2' is sign-extended. This may cause unexpected runtime behavior.
-        /w14928 # illegal copy-initialization; more than one user-defined conversion has been implicitly applied
-        /w44062 # enumerator 'identifier' in a switch of enum 'enumeration' is not handled
-        /w44242 # 'identifier': conversion from 'type1' to 'type2', possible loss of data
+        /w14826 # Conversion from 'type1' to 'type_2' is sign-extended. This may
+                # cause unexpected runtime behavior.
+        /w14928 # illegal copy-initialization; more than one user-defined
+                # conversion has been implicitly applied
+        /w44062 # enumerator 'identifier' in a switch of enum 'enumeration' is
+                # not handled
+        /w44242 # 'identifier': conversion from 'type1' to 'type2', possible
+                # loss of data
         /permissive- # standards conformance mode for MSVC compiler.
     )
 
     set(CLANG_WARNINGS
         -Wall
         -Wextra # reasonable and standard
-        -Wshadow # warn the user if a variable declaration shadows one from a parent context
+        -Wshadow # warn the user if a variable declaration shadows one from a
+                 # parent context
         -Wcast-align # warn for potential performance problem casts
         -Wunused # warn on anything being unused
         -Wpedantic # warn if non-standard is used
         -Wconversion # warn on type conversions that may lose data
         -Wnull-dereference # warn if a null dereference is detected
-        -Wformat=2 # warn on security issues around functions that format output (ie printf)
+        -Wformat=2 # warn on security issues around functions that format output
+                   # (ie printf)
     )
 
-    set(GCC_WARNINGS
-        ${CLANG_WARNINGS}
-    )
+    set(GCC_WARNINGS ${CLANG_WARNINGS})
 
     if(${target_set_warnings_AS_ERROR})
         set(CLANG_WARNINGS ${CLANG_WARNINGS} -Werror)
@@ -54,6 +64,7 @@ function(target_set_warnings)
         set(PROJECT_WARNINGS ${GCC_WARNINGS})
     endif()
 
-    target_compile_options(${target_set_warnings_TARGET} PRIVATE ${PROJECT_WARNINGS})
+    target_compile_options(${target_set_warnings_TARGET}
+                           PRIVATE ${PROJECT_WARNINGS})
 
 endfunction(target_set_warnings)
