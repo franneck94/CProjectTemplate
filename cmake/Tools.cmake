@@ -44,15 +44,11 @@ function(add_clang_format_target)
     if(NOT ${Python_FOUND})
         return()
     endif()
-    file(GLOB_RECURSE CMAKE_FILES_CC "*/*.cc")
-    file(GLOB_RECURSE CMAKE_FILES_CPP "*/*.cpp")
+    file(GLOB_RECURSE CMAKE_FILES_C "*/*.c")
     file(GLOB_RECURSE CMAKE_FILES_H "*/*.h")
-    file(GLOB_RECURSE CMAKE_FILES_HPP "*/*.hpp")
     set(CPP_FILES
-        ${CMAKE_FILES_CC}
-        ${CMAKE_FILES_CPP}
-        ${CMAKE_FILES_H}
-        ${CMAKE_FILES_HPP})
+        ${CMAKE_FILES_C}
+        ${CMAKE_FILES_H})
     list(
         FILTER
         CPP_FILES
@@ -87,7 +83,7 @@ function(add_tool_to_target target)
         TARGET_SOURCES
         INCLUDE
         REGEX
-        ".*.(cc|h|cpp|hpp)")
+        ".*.(c|h)")
 
     find_package(Python3 COMPONENTS Interpreter)
     if(NOT ${Python_FOUND})

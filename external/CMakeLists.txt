@@ -8,5 +8,5 @@ target_set_warnings(
     log
     ENABLE
     OFF
-    AS_ERROR
+    AS_ERRORS
     OFF)

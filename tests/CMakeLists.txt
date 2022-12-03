@@ -11,7 +11,7 @@ if(ENABLE_TESTING)
             ${UNIT_TEST_NAME}
             ENABLE
             ON
-            AS_ERROR
+            AS_ERRORS
             OFF)
     endif()
 
