@@ -28,12 +28,12 @@
 # USAGE:
 #
 # 1. Copy this file into your cmake modules path.
-# 1. Add the following line to your CMakeLists.txt (best inside an if-condition
-#   using a CMake option() to enable it just optionally): include(CodeCoverage)
-# 1. Append necessary compiler flags: append_coverage_compiler_flags()
-# 1. If you need to exclude additional directories from the report, specify them
-#   using full paths in the COVERAGE_EXCLUDES variable before calling
-#   setup_target_for_coverage_*(). Example: set(COVERAGE_EXCLUDES
+# 2. Add the following line to your CMakeLists.txt (best inside an if-condition
+#    using a CMake option() to enable it just optionally): include(CodeCoverage)
+# 3. Append necessary compiler flags: append_coverage_compiler_flags()
+# 4. If you need to exclude additional directories from the report, specify them
+#    using full paths in the COVERAGE_EXCLUDES variable before calling
+#    setup_target_for_coverage_*(). Example: set(COVERAGE_EXCLUDES
 # '${PROJECT_SOURCE_DIR}/src/dir1/*'
 # '/path/to/my/src/dir2/*') Or, use the EXCLUDE argument to
 # setup_target_for_coverage_*(). Example: setup_target_for_coverage_lcov( NAME

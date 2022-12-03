@@ -27,10 +27,6 @@ function(target_set_warnings)
         /w14826 # Conversion from 'type1' to 'type_2' is sign-extended
         /w44062 # enumerator in a switch of enum 'enumeration' is not handled
         /w44242 # conversion from 'type1' to 'type2', possible loss of data
-        # C++ Only
-        /w14928 # more than one implicitly user-defined conversion
-        /w14263 # function does not override any base class virtual function
-        /w14265 # class has virtual functions, but destructor is not virtual
     )
 
     set(CLANG_WARNINGS
@@ -45,10 +41,6 @@ function(target_set_warnings)
         -Wcast-align # warn for potential performance problem casts
         -Wconversion # warn on type conversions that may lose data
         -Wnull-dereference # warn if a null dereference is detected
-        # C++ Warnings
-        -Wnon-virtual-dtor # if a class with virtual func has a non-virtual dest
-        -Wold-style-cast # warn for c-style casts
-        -Woverloaded-virtual # if you overload (not override) a virtual function
     )
 
     set(GCC_WARNINGS ${CLANG_WARNINGS})
