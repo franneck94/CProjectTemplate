@@ -33,7 +33,7 @@ This is a template for C projects. What you get:
 ├── external
 │   ├── CMakesLists.txt
 │   ├── ...
-├── src
+├── src/my_lib
 │   ├── CMakesLists.txt
 │   ├── my_lib.h
 │   └── my_lib.c
@@ -67,7 +67,7 @@ make prepare
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
 cmake --build . --config Release --target main
-cd bin
+cd app
 ./main
 ```
 
@@ -77,7 +77,7 @@ cd bin
 cd build
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build . --config Debug --target unit_tests
-cd bin
+cd tests
 ./unit_tests
 ```
 
