@@ -12,38 +12,48 @@ set(CMAKE_C_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Options
-option(ENABLE_WARNINGS "Enable to add warnings to a target." ON)
+option(ENABLE_WARNINGS "Enable to add warnings to a target." OFF)
+option(ENABLE_WARNINGS_AS_ERRORS "Enable to treat warnings as errors." OFF)
+
 option(ENABLE_TESTING "Enable a Unit Testing build." ON)
 option(ENABLE_COVERAGE "Enable a Code Coverage build." OFF)
-option(ENABLE_LTO "Enable to add Link Time Optimization." OFF)
-option(ENABLE_CCACHE "Enable to add Ccache." OFF)
+
+option(ENABLE_CLANG_TIDY "Enable to add clang tidy." ON)
+
+option(ENABLE_CLANG_FORMAT "Enable to add clang-format." ON)
+option(ENABLE_CMAKE_FORMAT "Enable to add cmake-format." ON)
+
+option(ENABLE_LTO "Enable to add Link Time Optimization." ON)
 
 # Project/Library Names
 set(LIBRARY_NAME "lib")
+set(UNIT_TEST_NAME "unit_tests")
 set(EXECUTABLE_NAME "main")
 
 # CMAKE MODULES
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/)
-include(ConfigSafeGuards)
-include(Warnings)
-include(Docs)
-include(AddGitSubmodule)
 include(FetchContent)
+
+include(AddGitSubmodule)
+include(Docs)
+include(Warnings)
+include(Tools)
 include(LTO)
+include(ConfigSafeGuards)
+
+add_cmake_format_target()
+add_clang_format_target()
 
 if(ENABLE_COVERAGE)
     include(CodeCoverage)
     append_coverage_compiler_flags()
 endif()
-
 if(ENABLE_LTO)
     find_lto(C)
 endif()
 
 # EXTERNAL LIBRARIES
-
-add_git_submodule(external/log)
 
 FetchContent_Declare(
     unity

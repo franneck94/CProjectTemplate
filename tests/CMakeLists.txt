@@ -1,15 +1,14 @@
 if(ENABLE_TESTING)
-    set(TEST_MAIN "unit_tests")
     set(TEST_SOURCES "main.c")
 
-    add_executable(${TEST_MAIN} ${TEST_SOURCES})
+    add_executable(${UNIT_TEST_NAME} ${TEST_SOURCES})
 
-    target_link_libraries(${TEST_MAIN} PUBLIC ${LIBRARY_NAME})
-    target_link_libraries(${TEST_MAIN} PRIVATE unity)
+    target_link_libraries(${UNIT_TEST_NAME} PUBLIC ${LIBRARY_NAME})
+    target_link_libraries(${UNIT_TEST_NAME} PRIVATE unity)
     if(${ENABLE_WARNINGS})
         target_set_warnings(
             TARGET
-            ${TEST_MAIN}
+            ${UNIT_TEST_NAME}
             ENABLE
             ON
             AS_ERROR
@@ -29,8 +28,8 @@ if(ENABLE_TESTING)
             NAME
             ${COVERAGE_MAIN}
             EXECUTABLE
-            ${TEST_MAIN}
+            ${UNIT_TEST_NAME}
             DEPENDENCIES
-            ${TEST_MAIN})
+            ${UNIT_TEST_NAME})
     endif()
 endif()
