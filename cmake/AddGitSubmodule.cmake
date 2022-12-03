@@ -7,7 +7,5 @@ function(add_git_submodule dir)
                     ${dir} WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
     endif()
 
-    if(EXISTS ${dir}/CMakeLists.txt)
-        add_subdirectory(${dir})
-    endif()
+    add_subdirectory(${dir})
 endfunction(add_git_submodule)
