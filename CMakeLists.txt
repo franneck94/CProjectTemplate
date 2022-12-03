@@ -55,6 +55,8 @@ endif()
 
 # EXTERNAL LIBRARIES
 
+add_git_submodule(external/log)
+
 FetchContent_Declare(
     unity
     GIT_REPOSITORY https://github.com/ThrowTheSwitch/Unity.git
