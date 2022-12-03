@@ -60,13 +60,9 @@ if(ENABLE_COVERAGE)
         message(FATAL_ERROR "gcov not found! Aborting...")
     endif() # NOT GCOV_PATH
 
-    if("${CMAKE_CXX_COMPILER_ID}" MATCHES "(Apple)?[Cc]lang")
-        if("${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 3)
-            message(
-                FATAL_ERROR
-                    "Clang version must be 3.0.0 or greater! Aborting...")
-        endif()
-    elseif(NOT CMAKE_COMPILER_IS_GNUCXX)
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+        message(FATAL_ERROR "Compiler GNU/Clang!")
+    else()
         message(FATAL_ERROR "Compiler is not GNU gcc! Aborting...")
     endif()
 
