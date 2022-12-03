@@ -60,8 +60,8 @@ if(ENABLE_COVERAGE)
         message(FATAL_ERROR "gcov not found! Aborting...")
     endif() # NOT GCOV_PATH
 
-    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-        message(FATAL_ERROR "Compiler GNU/Clang!")
+    if(CMAKE_C_COMPILER_ID STREQUAL "GNU" OR CMAKE_C_COMPILER_ID MATCHES "Clang")
+        message("Compiler GNU/Clang!")
     else()
         message(FATAL_ERROR "Compiler is not GNU gcc! Aborting...")
     endif()

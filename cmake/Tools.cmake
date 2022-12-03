@@ -73,7 +73,7 @@ endfunction()
 
 # iwyu, clang-tidy and cppcheck
 function(add_tool_to_target target)
-    if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    if(CMAKE_C_COMPILER_ID MATCHES "MSVC")
         message("==> Cppcheck, IWYU and Clang-Tidy do not work with MSVC")
         return()
     endif()
@@ -102,7 +102,7 @@ function(add_tool_to_target target)
                     ${CMAKE_SOURCE_DIR}/tools/run-clang-tidy.py
                     ${TARGET_SOURCES}
                     -config-file=${CMAKE_SOURCE_DIR}/.clang-tidy
-                    -extra-arg-before=-std=${CMAKE_CXX_STANDARD}
+                    -extra-arg-before=-std=${CMAKE_C_STANDARD}
                     -header-filter="\(src|app\)\/*.\(h|hpp\)"
                     -p=${CMAKE_BINARY_DIR}
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
