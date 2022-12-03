@@ -33,7 +33,6 @@ include(FetchContent)
 include(LTO)
 
 if(ENABLE_COVERAGE)
-    include(CTest)
     include(CodeCoverage)
     append_coverage_compiler_flags()
 endif()
