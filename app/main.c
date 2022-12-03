@@ -1,8 +1,8 @@
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdio.h>
 
-#include <log.h>
 #include <argparse.h>
+#include <log.h>
 
 #include "config.h"
 #include "my_lib.h"
