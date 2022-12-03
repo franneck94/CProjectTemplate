@@ -17,6 +17,8 @@ int main(int argc, const char **argv)
 {
     log_info("Welcome to %s v%s\n", project_name, project_version);
 
+    int i = 0;
+
     int verbose = 0;
     const char *path = NULL;
     struct argparse_option options[] = {
