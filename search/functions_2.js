@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['print_5fhello_5fworld_12',['print_hello_world',['../my__lib_8c.html#a501e98503bb06e4809928757b9b9a77c',1,'print_hello_world():&#160;my_lib.c'],['../my__lib_8h.html#a501e98503bb06e4809928757b9b9a77c',1,'print_hello_world():&#160;my_lib.c']]]
+  ['set_17',['set',['../bar_2CMakeLists_8txt.html#a41c2c050cc096245a0e56b76ed30061f',1,'set(LIBRARY_SOURCES &quot;${CMAKE_CURRENT_SOURCE_DIR}/bar.c&quot;) set(LIBRARY_HEADERS &quot;$:&#160;CMakeLists.txt'],['../bar_2CMakeLists_8txt.html#a4ea4cbc22cc1ff52f92b39a0d689798f',1,'set(LIBRARY_INCLUDES &quot;./&quot; &quot;${CMAKE_BINARY_DIR}/configured_files/include&quot;) add_library(&quot;LibBar&quot; STATIC $:&#160;CMakeLists.txt'],['../foo_2CMakeLists_8txt.html#a608b2839f8d0fecb29792bf97bc297d7',1,'set(LIBRARY_SOURCES &quot;${CMAKE_CURRENT_SOURCE_DIR}/foo.c&quot;) set(LIBRARY_HEADERS &quot;$:&#160;CMakeLists.txt'],['../foo_2CMakeLists_8txt.html#a2d7350b377cc0b8fe4415da05cfe4074',1,'set(LIBRARY_INCLUDES &quot;./&quot; &quot;${CMAKE_BINARY_DIR}/configured_files/include&quot;) add_library(&quot;LibFoo&quot; STATIC $:&#160;CMakeLists.txt']]]
 ];

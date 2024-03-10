@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['my_5flib_2ec_3',['my_lib.c',['../my__lib_8c.html',1,'']]],
-  ['my_5flib_2eh_4',['my_lib.h',['../my__lib_8h.html',1,'']]]
+  ['print_5fhello_5fworld_7',['print_hello_world',['../foo_8c.html#a501e98503bb06e4809928757b9b9a77c',1,'print_hello_world():&#160;foo.c'],['../foo_8h.html#a501e98503bb06e4809928757b9b9a77c',1,'print_hello_world():&#160;foo.c']]]
 ];
